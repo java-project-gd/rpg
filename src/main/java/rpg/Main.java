@@ -37,11 +37,6 @@ public class Main {
                 throw new IllegalArgumentException("Invalid class choice");
         }
 
-
-
-        System.out.println("Pontos de forca:");
-        int pontosDeForca = scanner.nextInt();
-
         System.out.println("Pontos de defesa:");
         int pontosDeDefesa = scanner.nextInt();
 

@@ -10,7 +10,7 @@ public class Utils {
     public static void savePersonagemToJson(Personagem<?> personagem) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            File directory = new File("src/main/resources/personagens");
+            File directory = new File("src/main/resources/personagensDB");
             if (!directory.exists()) {
                 directory.mkdirs();
             }
