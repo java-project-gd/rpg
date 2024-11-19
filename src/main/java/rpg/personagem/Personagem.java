@@ -10,15 +10,11 @@ import rpg.classes.Knight;
 import rpg.classes.Paladin;
 import rpg.classes.Sorcerer;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Personagem<T> {
     private String nome;
-    private int pontosDeForca;
     private int pontosDeDefesa;
     private int nivel = 0;
     private int pontosDeVida;
@@ -27,21 +23,13 @@ public class Personagem<T> {
     private int pontosDeMana;
     private T classe;
 
-    public Personagem(String nome, int pontosDeForca, int pontosDeDefesa, int pontosDeAtaque, Buff Buff, T classe) {
+    public Personagem(String nome, int pontosDeDefesa, int pontosDeAtaque, Buff buff, T classe) {
         this.nome = nome;
-        this.pontosDeForca = pontosDeForca;
         this.pontosDeDefesa = pontosDeDefesa;
         this.nivel = 0;
         this.pontosDeAtaque = pontosDeAtaque;
         this.buff = buff;
         this.classe = classe;
-
-        if (buff == Buff.ATAQUE) {
-            this.pontosDeAtaque += 200;
-        }
-        if(buff == Buff.DEFESA) {
-            this.pontosDeDefesa += 200;
-        }
 
         if (classe instanceof Druid || classe instanceof Sorcerer) {
             this.pontosDeVida = 200;
@@ -59,7 +47,7 @@ public class Personagem<T> {
     }
 
     public void atacar(Personagem alvo) {
-        int dano = this.pontosDeForca - alvo.pontosDeDefesa;
+        int dano = this.pontosDeAtaque - alvo.pontosDeDefesa;
         if (dano < 0) {
             dano = 0;
         }
@@ -86,12 +74,20 @@ public class Personagem<T> {
         // Implementation for increasing luck
     }
 
+    public Buff buffar(Buff buff){
+        if (buff == Buff.ATAQUE) {
+            this.pontosDeAtaque += 200;
+        } else if (buff == Buff.DEFESA) {
+            this.pontosDeDefesa += 200;
+        }
+        return buff;
+    }
+
     public void imprimirPersonagem() {
         System.out.println("Nome: " + this.nome);
-        System.out.println("Classe: " + this.classe.getClass().getSimpleName());
+        System.out.println("Classe: " + this.classe);
         System.out.println("Nível: " + this.nivel);
         System.out.println("Pontos de vida: " + this.pontosDeVida);
-        System.out.println("Pontos de força: " + this.pontosDeForca);
         System.out.println("Pontos de defesa: " + this.pontosDeDefesa);
         System.out.println("Pontos de ataque: " + this.pontosDeAtaque);
         System.out.println("Pontos de mana: " + this.pontosDeMana);

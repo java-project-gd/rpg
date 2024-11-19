@@ -14,6 +14,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Insira o nome do personagem:");
+        String nome = scanner.nextLine();
         System.out.println("Choose character class (1: Druid, 2: Knight, 3: Sorcerer, 4: Paladin):");
         int classChoice = scanner.nextInt();
 
@@ -35,10 +37,7 @@ public class Main {
                 throw new IllegalArgumentException("Invalid class choice");
         }
 
-        System.out.println("Escolha os atributos:");
 
-        System.out.println("Nome:");
-        String nome = scanner.nextLine();
 
         System.out.println("Pontos de forca:");
         int pontosDeForca = scanner.nextInt();
@@ -66,13 +65,11 @@ public class Main {
 
 
         personagem.setNome(nome);
-        personagem.setPontosDeForca(pontosDeForca);
         personagem.setPontosDeDefesa(pontosDeDefesa);
         personagem.setPontosDeAtaque(pontosDeAtaque);
-        personagem.setBuff(buff);
+        personagem.setBuff(personagem.buffar(buff));
         personagem.imprimirPersonagem();
 
-        // Save character information to a JSON file
         Utils.savePersonagemToJson(personagem);
     }
 }
