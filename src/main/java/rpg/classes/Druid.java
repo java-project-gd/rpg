@@ -9,5 +9,6 @@ public class Druid extends Personagem {
         super();
         this.setPontosDeVida(200);
         this.setPontosDeMana(400);
+        this.setClasse("Druid");
     }
 }

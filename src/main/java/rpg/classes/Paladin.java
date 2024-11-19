@@ -9,5 +9,6 @@ public class Paladin extends Personagem {
         super();
         this.setPontosDeVida(300);
         this.setPontosDeMana(300);
+        this.setClasse("Paladin");
     }
 }

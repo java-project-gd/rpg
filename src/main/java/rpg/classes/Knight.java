@@ -9,5 +9,6 @@ public class Knight extends Personagem {
         super();
         this.setPontosDeVida(450);
         this.setPontosDeMana(150);
+        this.setClasse("Knight");
     }
 }
