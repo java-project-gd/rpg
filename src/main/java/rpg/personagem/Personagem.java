@@ -1,78 +1,77 @@
+
 package rpg.personagem;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import rpg.classes.Druid;
+import rpg.classes.Knight;
+import rpg.classes.Paladin;
+import rpg.classes.Sorcerer;
 
 @Data
-public class Personagem {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Personagem<T> {
     private String nome;
-    private int vida;
-    private int forca;
-    private int defesa;
-    private int agilidade;
-    private int sorte;
-    private int nivel;
-    private int experiencia;
-    private int pontosDeHabilidade;
+    private int pontosDeForca;
+    private int pontosDeDefesa;
+    private int nivel = 0;
+    private int pontosDeVida;
+    private int pontosDeAtaque;
+    private int buff;
+    private int pontosDeMana;
+    private T classe;
 
-    public Personagem() {
-        // Default constructor
-    }
-    public Personagem(String nome, int vida, int forca, int defesa, int agilidade, int sorte, int nivel, int experiencia, int pontosDeHabilidade) {
+    public Personagem(String nome, int pontosDeForca, int pontosDeDefesa, int pontosDeAtaque, int buff, T classe) {
         this.nome = nome;
-        this.vida = vida;
-        this.forca = forca;
-        this.defesa = defesa;
-        this.agilidade = agilidade;
-        this.sorte = sorte;
-        this.nivel = nivel;
-        this.experiencia = experiencia;
-        this.pontosDeHabilidade = pontosDeHabilidade;
+        this.pontosDeForca = pontosDeForca;
+        this.pontosDeDefesa = pontosDeDefesa;
+        this.nivel = 0;
+        this.pontosDeAtaque = pontosDeAtaque;
+        this.buff = buff;
+        this.classe = classe;
+
+        if (classe instanceof Druid || classe instanceof Sorcerer) {
+            this.pontosDeVida = 200;
+            this.pontosDeMana = 400;
+        } else if (classe instanceof Paladin) {
+            this.pontosDeVida = 300;
+            this.pontosDeMana = 300;
+        } else if (classe instanceof Knight) {
+            this.pontosDeVida = 450;
+            this.pontosDeMana = 150;
+        } else {
+            this.pontosDeVida = 100; // Default value if class is not recognized
+            this.pontosDeMana = 100; // Default value if class is not recognized
+        }
     }
 
     public void atacar(Personagem alvo) {
-        int dano = this.forca - alvo.defesa;
+        int dano = this.pontosDeForca - alvo.pontosDeDefesa;
         if (dano < 0) {
             dano = 0;
         }
-        alvo.vida -= dano;
+        alvo.pontosDeVida -= dano;
     }
 
     public void ganharExperiencia(int experiencia) {
-        this.experiencia += experiencia;
-        if (this.experiencia >= 100) {
-            this.nivel++;
-            this.pontosDeHabilidade += 5;
-            this.experiencia -= 100;
-        }
+        // Implementation for gaining experience
     }
 
     public void aumentarForca() {
-        if (this.pontosDeHabilidade > 0) {
-            this.forca++;
-            this.pontosDeHabilidade--;
-        }
+        // Implementation for increasing strength
     }
 
     public void aumentarDefesa() {
-        if (this.pontosDeHabilidade > 0) {
-            this.defesa++;
-            this.pontosDeHabilidade--;
-        }
+        // Implementation for increasing defense
     }
 
     public void aumentarAgilidade() {
-        if (this.pontosDeHabilidade > 0) {
-            this.agilidade++;
-            this.pontosDeHabilidade--;
-        }
+        // Implementation for increasing agility
     }
 
     public void aumentarSorte() {
-        if (this.pontosDeHabilidade > 0) {
-            this.sorte++;
-            this.pontosDeHabilidade--;
-        }
+        // Implementation for increasing luck
     }
-
 }
