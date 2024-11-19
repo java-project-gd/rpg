@@ -7,8 +7,10 @@ import rpg.personagem.Personagem;
 public class Knight extends Personagem {
     public Knight() {
         super();
-        this.setPontosDeVida(450);
-        this.setPontosDeMana(150);
+        this.setPontosDeVida(5800);
+        this.setPontosDeMana(1500);
+        this.setPontosDeAtaque(2800);
+        this.setPontosDeDefesa(4000);
         this.setClasse("Knight");
     }
 }

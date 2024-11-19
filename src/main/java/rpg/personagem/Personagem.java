@@ -30,23 +30,6 @@ public class Personagem<T> {
         this.pontosDeAtaque = pontosDeAtaque;
         this.buff = buff;
         this.classe = classe;
-
-        if (classe instanceof Druid || classe instanceof Sorcerer) {
-            this.pontosDeVida = 2000;
-            this.pontosDeMana = 6000;
-            this.pontosDeAtaque = 2700;
-            this.pontosDeDefesa = 900;
-        } else if (classe instanceof Paladin) {
-            this.pontosDeVida = 3700;
-            this.pontosDeMana = 3000;
-            this.pontosDeAtaque = 3400;
-            this.pontosDeDefesa = 2000;
-        } else if (classe instanceof Knight) {
-            this.pontosDeVida = 5800;
-            this.pontosDeMana = 1500;
-            this.pontosDeAtaque = 2800;
-            this.pontosDeDefesa = 4000;
-        }
     }
 
     public void atacar(Personagem alvo) {
