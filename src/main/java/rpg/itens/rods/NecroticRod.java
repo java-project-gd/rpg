@@ -1,4 +1,5 @@
 package rpg.itens.rods;
 
-public class NecroticRod {
+public class NecroticRod  {
+
 }
