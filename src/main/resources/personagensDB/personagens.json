@@ -1,0 +1,72 @@
+[
+  {
+    "nome": "Galdalf",
+    "pontosDeDefesa": 900,
+    "nivel": 0,
+    "pontosDeVida": 2000,
+    "pontosDeAtaque": 2900,
+    "buff": "ATAQUE",
+    "pontosDeMana": 6000,
+    "classe": "Sorcerer"
+  },
+  {
+    "nome": "Ragnar",
+    "pontosDeDefesa": 4000,
+    "nivel": 0,
+    "pontosDeVida": 5800,
+    "pontosDeAtaque": 3000,
+    "buff": "ATAQUE",
+    "pontosDeMana": 1500,
+    "classe": "Knight"
+  },
+  {
+    "nome": "Bjorn",
+    "pontosDeDefesa": 4000,
+    "nivel": 0,
+    "pontosDeVida": 5800,
+    "pontosDeAtaque": 3000,
+    "buff": "ATAQUE",
+    "pontosDeMana": 1500,
+    "classe": "Knight"
+  },
+  {
+    "nome": "Sauron",
+    "pontosDeDefesa": 900,
+    "nivel": 0,
+    "pontosDeVida": 2000,
+    "pontosDeAtaque": 2900,
+    "buff": "ATAQUE",
+    "pontosDeMana": 6000,
+    "classe": "Sorcerer"
+  },
+  {
+    "nome": "Voldemort",
+    "pontosDeDefesa": 900,
+    "nivel": 0,
+    "pontosDeVida": 2000,
+    "pontosDeAtaque": 2900,
+    "buff": "ATAQUE",
+    "pontosDeMana": 6000,
+    "classe": "Sorcerer"
+  },
+  {
+    "nome": "Legolas",
+    "pontosDeDefesa": 2000,
+    "nivel": 0,
+    "pontosDeVida": 3700,
+    "pontosDeAtaque": 3600,
+    "buff": "ATAQUE",
+    "pontosDeMana": 3000,
+    "classe": "Paladin"
+  },
+  {
+    "nome": "Elf",
+    "pontosDeDefesa": 2200,
+    "nivel": 0,
+    "pontosDeVida": 3700,
+    "pontosDeAtaque": 3400,
+    "buff": "DEFESA",
+    "pontosDeMana": 3000,
+    "classe": "Paladin"
+  }
+]
